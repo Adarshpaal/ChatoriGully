@@ -1,0 +1,22 @@
+from flask import Flask, render_template
+
+app = Flask(__name__)
+
+@app.route('/')
+def customer_dashboard():
+    return render_template('customer.html')
+
+@app.route('/admin')
+def admin_dashboard():
+    return render_template('admin.html')
+
+@app.route('/restaurant')
+def restaurant_dashboard():
+    return render_template('restaurant.html')
+
+@app.route('/rider')
+def rider_dashboard():
+    return render_template('rider.html')
+
+if __name__ == '__main__':
+    app.run(debug=True)
