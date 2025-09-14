@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chatori Gully - Welcome</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Welcome to Chatori Gully 🚀</h1>
+    <p>Select your role to continue:</p>
+
+    <div class="role-buttons">
+        <button onclick="location.href='/login?role=customer'">Customer</button>
+        <button onclick="location.href='/login?role=restaurant'">Restaurant</button>
+        <button onclick="location.href='/login?role=rider'">Rider</button>
+    </div>
+</body>
+</html>

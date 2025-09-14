@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login - Chatori Gully</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>{{ role.capitalize() }} Login</h1>
+    <form action="/dashboard" method="POST">
+        <input type="hidden" name="role" value="{{ role }}">
+        <label>Phone Number:</label>
+        <input type="text" name="phone" placeholder="+91" required>
+        <button type="submit">Login</button>
+    </form>
+</body>
+</html>

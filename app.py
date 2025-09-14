@@ -1,10 +1,21 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
 @app.route("/")
-def home():
-    return render_template("customer.html")  # Main landing page
+def index():
+    return render_template("index.html")  # Landing page with role selection
+
+@app.route("/login")
+def login():
+    role = request.args.get('role')
+    return render_template("login.html", role=role)
+
+@app.route("/dashboard", methods=['POST'])
+def dashboard():
+    phone = request.form.get('phone')
+    role = request.form.get('role')
+    return render_template("dashboard.html", role=role, phone=phone)
 
 @app.route("/admin")
 def admin_dashboard():
